@@ -12,6 +12,10 @@ __pycache__/
 # Real fleet inventory (commit only the sanitized example)
 fleet/fleet.yaml
 
+# Generated experiment artifacts (the demo regenerates these; verdicts live in RESULTS_*.md)
+experiments/*/raw.json
+experiments/*/gate_evaluation.json
+
 # Editor / OS
 .DS_Store
 *.swp
