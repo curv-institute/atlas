@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use Atlas, please cite it as below."
+title: "Atlas: Auditable Trails for Long Autonomous Sessions"
+abstract: >-
+  A documented, agent-agnostic command surface for rigorous, bounded autonomous research and
+  development across many repos: a living operating guide, a canonical state surface, ownership
+  mediation, preregistration and verification gates, and adversarial review.
+type: software
+authors:
+  - family-names: Miller
+    given-names: J. W.
+    affiliation: Curv Institute
+repository-code: "https://github.com/curv-institute/atlas"
+url: "https://github.com/curv-institute/atlas"
+license: MIT
+version: "0.1.0"
+date-released: "2026-06-18"
+keywords:
+  - research-methods
+  - reproducibility
+  - preregistration
+  - ai-agents
+  - autonomous-agents
+  - verification
