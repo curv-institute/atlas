@@ -6,7 +6,7 @@ metadata:
 ---
 
 Never dump large command output into a response. For sweeps, scans, log tails, or big diffs: write
-to a file (e.g. `/tmp/…`), then report only the lines that matter + counts.
+to a file (e.g. `/tmp/...`), then report only the lines that matter + counts.
 
 **Why:** large raw output burns the output-token ceiling and the context window, and reads as noise.
 In long sessions context is precious.

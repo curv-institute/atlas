@@ -1,7 +1,7 @@
 # AGENTS.md - Atlas (agent entry point)
 
 This is the **canonical instruction file for any AI coding agent** working in this repo (Codex,
-Claude Code, Gemini CLI, Cursor, opencode, Aider, …). It's plain markdown - read it and follow it.
+Claude Code, Gemini CLI, Cursor, opencode, Aider, ...). It's plain markdown - read it and follow it.
 `CLAUDE.md`, `GEMINI.md`, and `.cursor/rules/` all redirect here so every agent gets the same rules.
 
 Atlas is a documented command surface for rigorous, agent-assisted **research and development** - a
@@ -46,8 +46,10 @@ agents: when the user asks for one (or the situation matches), open the file and
 - **Record additively.** Never delete history; supersede with a banner. Wrong results stay visible in
   the withdrawn register. Evidence/preregistration files are write-once (don't edit; correct via a new file).
 - **Conciseness.** Don't flood context with raw tool output - pipe big output to a file and summarize.
-- **Git.** Small commits; `pull --rebase` in shared clones; stage only what you changed; attribute
-  agent-assisted commits with a trailer.
+- **Style (no AI tells).** Avoid em dashes, smart quotes, buzzwords, and filler constructions; see
+  `STYLE.md` and run `tools/style-check.sh` before committing.
+- **Git.** Small commits; `pull --rebase` in shared clones; stage only what you changed; keep commit
+  messages clear and specific.
 
 ## Run the demo (any agent / human)
 ```bash

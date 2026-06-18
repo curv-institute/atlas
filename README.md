@@ -103,6 +103,7 @@ naming, ownership, which agents you use, the optional fleet layer, and your firs
 | `experiments/exp0_demo/` | A runnable toy that exercises the full lifecycle. |
 | `memory/` | Typed, persistent lessons (`user` / `feedback` / `project` / `reference`) + index. |
 | `fleet/` | *Optional* multi-machine layer: a sanitized inventory + infra discovery discipline. |
+| `STYLE.md` + `tools/style-check.sh` | "No AI tells" style rules + a lint gate that bans them. |
 
 ## Quick start
 ```bash

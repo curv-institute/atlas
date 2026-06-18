@@ -24,6 +24,11 @@ This repo treats its own history the way it treats results: **additive and hones
   silently empty it).
 - Re-derive load-bearing numbers from the raw artifact by an independent route before claiming them.
 
+## Style (no AI tells)
+Prose and code avoid machine-generated tics (em dashes, smart quotes, buzzwords, filler
+constructions). The rules are in `STYLE.md` and the lintable ones are enforced by
+`tools/style-check.sh` (run it before committing; a non-zero exit means rephrase the flagged lines).
+
 ## Adding a lesson
 When something fools you, encode it where it will fire next time:
 - A new confound → one line in `OPERATING_GUIDE.md` §3 (rule + dated episode).

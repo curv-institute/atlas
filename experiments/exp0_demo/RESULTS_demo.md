@@ -4,14 +4,14 @@
 > Method A (shrinkage) beats baseline B (OLS) on held-out predictive NLL.
 > Effect = **Δ 0.387** (38.7% relative reduction, *dimensionless*), 95% CI **[0.363, 0.412]**,
 > paired sign test **p = 1.7e-54** (A better in **197/200** seeds). Artifact: `raw.json`
-> (`content_sha256` f6c209…), evaluator `gate.py`. Reproduce: `uv run pilot/run.py && uv run gate.py`.
+> (`content_sha256` f6c209...), evaluator `gate.py`. Reproduce: `uv run pilot/run.py && uv run gate.py`.
 
 ## Instrument first (OPERATING_GUIDE §0)
 The instrument is the per-seed held-out NLL gap with a paired sign test and a bootstrap CI over 200
 seeds. It resolves the effect with enormous margin (p≈1e-54), so the dynamic range is not in doubt.
 Train and test splits are disjoint (no same-split leakage); A and B see identical data per seed
 (matched). The **primary metric is dimensionless** (a relative reduction), which makes the headline
-robust to unit choices - by design.
+unaffected by unit choices, by design.
 
 ## Worked example: an overclaim, caught, and walked back
 This is the teaching core of the demo - the failure mode that most often sneaks an artifact through

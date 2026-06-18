@@ -18,7 +18,7 @@ Then go section by section; skip any the user says is already fine.
 - Project **name** → update `README.md` title + intro, and propose renaming the repo directory
   (confirm before `git mv`/`mv`).
 - **Domain**: research / development / both → adjust the README framing wording.
-- **Attribution**: keep the upstream "distilled from … Atlas / Curv Institute" credit (the MIT
+- **Attribution**: keep the upstream "distilled from ... Atlas / Curv Institute" credit (the MIT
   license asks reusers to retain it) and add the user's own org/author line.
 
 ## 2. Canonical state (`CURRENT_STATE.md`)
@@ -32,7 +32,7 @@ Then go section by section; skip any the user says is already fine.
   `MEDIATION/REQ-*.md` notes) and who the **fallback owner** is.
 
 ## 4. Agents & agent files
-- Ask which CLI agents the team uses (Claude Code, Codex, Gemini, Cursor, Aider, …).
+- Ask which CLI agents the team uses (Claude Code, Codex, Gemini, Cursor, Aider, ...).
 - `AGENTS.md` is canonical for all; confirm `CLAUDE.md` / `GEMINI.md` / `.cursor/rules/` redirects are
   present for the ones in use (add any missing). Review `.claude/settings.json` defaults.
 
@@ -57,7 +57,7 @@ Then go section by section; skip any the user says is already fine.
   and push; ask public vs private-first and the org/account. Do NOT push without an explicit yes.
 
 ## 9. Confirm & commit
-- Summarize every change made. Run the demo (`uv run …`) if experiments were touched, to confirm the
+- Summarize every change made. Run the demo (`uv run ...`) if experiments were touched, to confirm the
   repo still works. Commit with a clear message + attribution trailer. Leave any push to §8's confirm.
 
 ## Rules
