@@ -29,7 +29,8 @@ agents: when the user asks for one (or the situation matches), open the file and
 | Workflow | Procedure file | Use when |
 |----------|----------------|----------|
 | **atlas-setup** (alias **onboard**) | `.claude/skills/atlas-setup/SKILL.md` | first-time setup, or change project settings (name, ownership, agents, fleet, remote) |
-| **add-repo** | `.claude/skills/add-repo/SKILL.md` | register a git checkout into this hub's `REPOS.md` |
+| **add-repo** | `.claude/skills/add-repo/SKILL.md` | register a git checkout into this hub's `REPOS.md` (then syncs its knowledge) |
+| **sync-repo-knowledge** | `.claude/skills/sync-repo-knowledge/SKILL.md` | read a repo and write/refresh its wiki knowledge page |
 | **research** | `.claude/skills/research/SKILL.md` | work a task end-to-end through the lifecycle |
 | **council**  | `.claude/skills/council/SKILL.md`  | adversarially verify a result / vet a plan / go-no-go |
 | **optimize** | `.claude/skills/optimize/SKILL.md` | make a slow/expensive run faster *without changing results* |

@@ -23,8 +23,10 @@ repo is already listed, update its row instead of duplicating.
 4. **Privacy check (public instance).** If this Atlas instance is a public repo and the path is a
    sensitive internal location, do not commit it without the user's ok: offer to record it in a
    gitignored `REPOS.local.md` instead, or store only the remote + a relative name.
-5. **Report** what was added or updated (name, path, remote, branch). Commit only if asked, and keep
-   the message clear (no agent trailer).
+5. **Sync knowledge.** Run the `/sync-repo-knowledge` procedure on the toplevel path to populate
+   `wiki/topics/<name>.md` with a knowledge page (purpose, structure, state, recent activity).
+6. **Report** what was added or updated (name, path, remote, branch) and that knowledge was synced.
+   Commit only if asked, and keep the message clear (no agent trailer).
 
 ## Notes
 - This only registers the repo; it does not clone, modify, or take ownership of it.

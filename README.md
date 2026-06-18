@@ -100,7 +100,7 @@ naming, ownership, which agents you use, the optional fleet layer, and your firs
 | `Home.md` | Index of every topic/wiki page. |
 | `OWNERSHIP.md` | Who/what owns which area - consulted by the `/mediate` skill. |
 | `REPOS.md` | The repos this hub governs; register a checkout with `/add-repo <path>`. |
-| `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/add-repo`, `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
+| `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/add-repo`, `/sync-repo-knowledge`, `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
 | `wiki/topics/` | Hand-edited topic pages (no build pipeline; the files *are* the wiki). |
 | `experiments/exp0_demo/` | A runnable toy that exercises the full lifecycle. |
 | `memory/` | Typed, persistent lessons (`user` / `feedback` / `project` / `reference`) + index. |

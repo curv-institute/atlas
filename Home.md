@@ -17,4 +17,4 @@ Start here. The canonical program state is **[CURRENT_STATE.md](CURRENT_STATE.md
 - [exp0_demo](experiments/exp0_demo/) - runnable lifecycle demo (prereg → gate → review → walkback).
 
 ## Skills (agent workflows)
-`/atlas-setup` · `/add-repo` · `/research` · `/council` · `/optimize` · `/snapshot` · `/mediate` - see `.claude/skills/`.
+`/atlas-setup` · `/add-repo` · `/sync-repo-knowledge` · `/research` · `/council` · `/optimize` · `/snapshot` · `/mediate` - see `.claude/skills/`.
