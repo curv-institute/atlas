@@ -3,11 +3,11 @@
    _ \   |   |       _ \  \___ \
   ___ \  |   |      ___ \       |
 _/    _\_|  _____|_/    _\_____/
+
+  Auditable Trails for Long Autonomous Sessions.
 ```
 
 # Atlas
-
-> **A·T·L·A·S** — *Auditable Trails for Long Autonomous Sessions.*
 
 A documented command surface for **rigorous, agent-assisted research *and* development** — a hub
 that maps and governs many concurrent repos/work areas, where a result (or a change) only counts
