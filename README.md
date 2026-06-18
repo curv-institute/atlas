@@ -20,6 +20,57 @@ and walked back — so you can see it work before adopting it.
 Rather be right than impressive: lead with the instrument, pre-state the threshold, verify
 adversarially, and record everything additively — withdrawals stay on the page.
 
+## How the workflows compose
+Each named workflow is a skill (`/mediate`, `/research`, `/optimize`, `/council`, `/snapshot`).
+`/research` drives the whole loop; `/atlas-setup` (alias `/onboard`) configures the repo first.
+
+```mermaid
+flowchart TD
+    T["Task / goal"] --> MED{"/mediate: in bounds?"}
+    MED -- "out of bounds" --> OWN["Notify owner — what / why / diff / risk;<br/>they judge (never halt-and-wait)"]
+    MED -- "in bounds" --> SC["Scope + state the falsifier"]
+    SC --> PI["Cheap pilot first"]
+    PI --> PR["Preregister: freeze the bar + units,<br/>before the run"]
+    PR --> BR["Build and run:<br/>reproducible from a named artifact"]
+    BR --> SLOW{"slow / expensive?"}
+    SLOW -- "yes" --> OPT["/optimize: faster, same result"]
+    OPT --> BR
+    SLOW -- "no" --> GATE["Gate: evaluator writes<br/>gate_evaluation.json"]
+    GATE --> CO{"/council: survives refutation?"}
+    CO -- "fix" --> BR
+    CO -- "obstruction" --> DOC["Document the obstruction<br/>(a valid outcome)"]
+    CO -- "solid" --> REC["Record additively in CURRENT_STATE.md"]
+    DOC --> REC
+    REC --> SNAP["/snapshot: plain-English status"]
+```
+
+## Built for long, bounded autonomous runs
+Atlas is designed for work you hand to an agent and walk away from — long, unsupervised sessions
+that must stay honest and *stop on their own*. It bounds autonomy with structure, not trust:
+
+- **Pre-stated bars + gates** — the agent can't move the goalposts; the verdict comes from an
+  evaluator against a frozen, unit-bearing threshold.
+- **Ownership mediation, not halting** — `/mediate` routes out-of-bounds work to its owner instead of
+  stalling the whole run on a human, so progress continues on what the agent owns.
+- **Resumable** — `CURRENT_STATE.md` + a task ledger let a run pause, summarize, and be picked up
+  later (or by a different agent).
+- **Additive, auditable record** — every result *and* withdrawal stays on the page, so a long
+  unsupervised run leaves a trail you can verify after the fact.
+- **Interruptions ≠ conclusions** — an API/tooling error is logged and resumed, never counted as a
+  result or a reason to quit; only a real positive or a fully-surveyed conclusion stops a loop.
+
+```mermaid
+flowchart LR
+    SET["/atlas-setup: configure once"] --> Q["Task backlog"]
+    Q --> R["/research one task<br/>(the lifecycle loop)"]
+    R --> V{"verdict"}
+    V -- "solid / obstruction" --> REC["record + next"]
+    V -- "fix" --> R
+    REC --> CHK{"budget and tasks left?"}
+    CHK -- "yes" --> R
+    CHK -- "no / refereed conclusion" --> STOP["Stop: summary + handoff note"]
+```
+
 ## Works with any CLI agent
 The agent rules live in a root **`AGENTS.md`** (the cross-agent standard, honored by Codex,
 opencode, Cursor, and others). `CLAUDE.md`, `GEMINI.md`, and `.cursor/rules/` are thin redirects to
