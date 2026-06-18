@@ -13,7 +13,9 @@ repo is already listed, update its row instead of duplicating.
    git checkout: `git -C <path> rev-parse --is-inside-work-tree`. If not, report and stop.
 2. **Gather metadata** (run from `<path>`):
    - `toplevel` = `git -C <path> rev-parse --show-toplevel` (use as the canonical path).
-   - `name` = basename of toplevel, or the remote repo name if clearer.
+   - `name` = basename of `toplevel`. This is canonical: the REPOS row, the wiki page filename, and
+     the Home link must all use this exact name. Do NOT substitute the package or remote name unless
+     the user explicitly asks; if they do, use that one name consistently in all three places.
    - `remote` = `git -C <path> remote get-url origin` (use `local-only` if there is no remote).
    - `default_branch` = `git -C <path> symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null` (fallback: the current branch from `git -C <path> branch --show-current`).
    - `role/notes` = ask the user briefly, or infer from the repo README first line.

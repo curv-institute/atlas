@@ -12,7 +12,9 @@ generated zone; never overwrite hand-edited notes. This summarizes a repo, it do
 ## Steps
 1. Resolve `<path>` (default: current directory). Confirm it is a git checkout
    (`git -C <path> rev-parse --is-inside-work-tree`); if not, report and stop.
-2. `name` = basename of `git -C <path> rev-parse --show-toplevel`. Target page: `wiki/topics/<name>.md`.
+2. `name` = basename of `git -C <path> rev-parse --show-toplevel` (the same canonical basename rule
+   as `/add-repo`, so the page filename matches the REPOS row exactly). Target page:
+   `wiki/topics/<name>.md`.
 3. **Gather knowledge** (read-only; do not modify the source repo):
    - Purpose: the first paragraph of the repo README (README.md / .rst / docs index).
    - Structure: top-level dirs and their role (one line each); key entry points.
