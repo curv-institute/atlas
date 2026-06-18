@@ -1,0 +1,17 @@
+# Python / uv
+__pycache__/
+*.pyc
+.venv/
+.uv/
+
+# Local agent state (keep skills + settings.json tracked; ignore transient/local bits)
+.claude/memory/
+.claude/usage-data/
+.claude/*.local.json
+
+# Real fleet inventory (commit only the sanitized example)
+fleet/fleet.yaml
+
+# Editor / OS
+.DS_Store
+*.swp

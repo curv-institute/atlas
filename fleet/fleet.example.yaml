@@ -1,0 +1,46 @@
+# EXAMPLE inventory — all addresses/MACs are FAKE placeholders. Sanitize before committing real data.
+# This optional layer models a small multi-machine research fleet so an agent knows where to run what.
+schema_version: 1
+generated_at: "YYYY-MM-DDThh:mm:ssZ"
+
+networks:
+  lan:
+    cidr: "10.0.0.0/24"          # example only
+    purpose: "general management + SSH"
+  fast_fabric:
+    cidr: "10.10.0.0/24"          # example only
+    purpose: "high-bandwidth node-to-node (storage, distributed compute)"
+
+management_access:
+  ssh_user: researcher
+  ssh_pattern: "ssh researcher@<node>.example.local"
+  sudo_policy_expected: "passwordless sudo on physical nodes"
+
+nodes:
+  node-a:
+    kind: physical_server
+    roles: [gpu_compute]
+    lan_ip: "10.0.0.11"           # example
+    os: "Ubuntu 24.04"
+    gpu: "<model>, <vram>"
+  node-b:
+    kind: physical_server
+    roles: [cpu_compute, scheduler]
+    lan_ip: "10.0.0.12"           # example
+  storage:
+    kind: physical_server
+    roles: [bulk_storage, nfs]
+    lan_ip: "10.0.0.20"           # example
+    export: "/data"
+
+# Ethernet MACs per node/interface. Keep this filled in — it is the authoritative way to find a host
+# whose IP moved (match the MAC against `ip neigh`), and to identify a mystery host by OUI vendor.
+link_mac_addresses:
+  description: "Per-interface MACs (FAKE examples). collected_at + source per real entry."
+  nodes:
+    node-a:
+      eth0: { lan_ip: "10.0.0.11", mac: "02:00:00:00:00:11" }   # example MAC
+    node-b:
+      eth0: { lan_ip: "10.0.0.12", mac: "02:00:00:00:00:12" }   # example MAC
+    storage:
+      eth0: { lan_ip: "10.0.0.20", mac: "02:00:00:00:00:20" }   # example MAC
