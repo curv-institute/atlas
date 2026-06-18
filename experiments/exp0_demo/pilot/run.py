@@ -31,7 +31,9 @@ def one_seed(seed: int) -> tuple[float, float]:
     Xtr = rng.normal(0, 1, (N_TRAIN, D)); ytr = Xtr @ beta + rng.normal(0, NOISE_SD, N_TRAIN)
     Xte = rng.normal(0, 1, (N_TEST, D)); yte = Xte @ beta + rng.normal(0, NOISE_SD, N_TEST)
 
-    # B: OLS (min-norm via lstsq, since n<d).   A: ridge.
+    # B: OLS via lstsq (n=64 > d=40, full column rank -> unique overdetermined solution).
+    # A: ridge (shrinkage). With n only modestly above d and a sparse signal, OLS is high-variance;
+    # ridge lowers test NLL by variance reduction. That gap is the demo effect.
     bB, *_ = np.linalg.lstsq(Xtr, ytr, rcond=None)
     bA = np.linalg.solve(Xtr.T @ Xtr + LAMBDA * np.eye(D), Xtr.T @ ytr)
 

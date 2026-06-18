@@ -80,12 +80,13 @@ flowchart LR
     CHK -- "no / refereed conclusion" --> STOP["Stop: summary + handoff note"]
 ```
 
-## Works with any CLI agent
-The agent rules live in a root **`AGENTS.md`** (the cross-agent standard, honored by Codex,
-opencode, Cursor, and others). `CLAUDE.md`, `GEMINI.md`, and `.cursor/rules/` are thin redirects to
-it, so Claude Code, Gemini CLI, Cursor, Codex, Aider, etc. all get the same method. The workflows
-are plain-markdown procedures (`.claude/skills/<name>/SKILL.md`) any agent can read and follow;
-Claude Code additionally exposes them as slash commands. Nothing here is Claude-only.
+## Works with CLI agents
+The agent rules live in a root **`AGENTS.md`** (an emerging cross-agent convention read natively by
+Codex and opencode). Claude Code, Gemini CLI, and Cursor are pointed at it by thin redirects
+(`CLAUDE.md`, `GEMINI.md`, `.cursor/rules/`), so each loads the same method. The workflows are
+plain-markdown procedures under `.claude/skills/<name>/SKILL.md` that any agent can be pointed at and
+follow; native auto-discovery and slash-command invocation are Claude-Code-only. Verified end-to-end
+on a fresh clone with both Codex and Claude (the demo reproduced bit-for-bit).
 
 **New here?** Run **`/atlas-setup`** (alias `/onboard`) - a guided wizard that walks you through
 naming, ownership, which agents you use, the optional fleet layer, and your first experiment.

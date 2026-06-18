@@ -5,8 +5,8 @@ This repo treats its own history the way it treats results: **additive and hones
 ## Git
 - Small, frequent commits with descriptive messages. Commit (or push) only what's asked.
 - Direct-to-main is fine for a solo/small program; use the default branch deliberately.
-- Attribute agent-assisted commits, e.g. a trailer:
-  `Co-Authored-By: <your agent/model> <noreply@example.com>`
+- Keep commit messages clear and specific. Attribution is your project's call; this template's own
+  history is single-author with no agent trailers.
 - In shared clones, `pull --rebase` before editing; never blanket `git add -A` over another thread's
   staged work - stage only the files you changed.
 
