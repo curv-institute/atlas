@@ -23,9 +23,12 @@ adversarially, and record everything additively — withdrawals stay on the page
 ## Works with any CLI agent
 The agent rules live in a root **`AGENTS.md`** (the cross-agent standard, honored by Codex,
 opencode, Cursor, and others). `CLAUDE.md`, `GEMINI.md`, and `.cursor/rules/` are thin redirects to
-it, so Claude Code, Gemini CLI, Cursor, Codex, Aider, etc. all get the same method. The five
-workflows are plain-markdown procedures (`.claude/skills/<name>/SKILL.md`) any agent can read and
-follow; Claude Code additionally exposes them as slash commands. Nothing here is Claude-only.
+it, so Claude Code, Gemini CLI, Cursor, Codex, Aider, etc. all get the same method. The workflows
+are plain-markdown procedures (`.claude/skills/<name>/SKILL.md`) any agent can read and follow;
+Claude Code additionally exposes them as slash commands. Nothing here is Claude-only.
+
+**New here?** Run **`/atlas-setup`** (alias `/onboard`) — a guided wizard that walks you through
+naming, ownership, which agents you use, the optional fleet layer, and your first experiment.
 
 ## What's here
 | Path | What it is |
@@ -35,7 +38,7 @@ follow; Claude Code additionally exposes them as slash commands. Nothing here is
 | `CURRENT_STATE.md` | The single canonical state surface: live claims, the **withdrawn-claims register**, adoptions/closures. |
 | `Home.md` | Index of every topic/wiki page. |
 | `OWNERSHIP.md` | Who/what owns which area — consulted by the `/mediate` skill. |
-| `.claude/skills/` | Agent workflows: `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
+| `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
 | `wiki/topics/` | Hand-edited topic pages (no build pipeline; the files *are* the wiki). |
 | `experiments/exp0_demo/` | A runnable toy that exercises the full lifecycle. |
 | `memory/` | Typed, persistent lessons (`user` / `feedback` / `project` / `reference`) + index. |
