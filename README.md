@@ -1,5 +1,7 @@
 # Atlas
 
+> **A·T·L·A·S** — *Auditable Trails for Long Autonomous Sessions.*
+
 A documented command surface for **rigorous, agent-assisted research *and* development** — a hub
 that maps and governs many concurrent repos/work areas, where a result (or a change) only counts
 after it survives an attempt to break it. It encodes a working method into files an AI coding agent
