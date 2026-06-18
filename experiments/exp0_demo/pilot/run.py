@@ -25,7 +25,7 @@ N_NONZERO = 8          # true sparse support
 NOISE_SD = 1.0
 
 
-def one_seed(seed: int) -> tuple[float, float]:
+def one_seed(seed: int, null: bool = False) -> tuple[float, float]:
     rng = np.random.default_rng(seed)
     beta = np.zeros(D); idx = rng.choice(D, N_NONZERO, replace=False); beta[idx] = rng.normal(0, 1, N_NONZERO)
     Xtr = rng.normal(0, 1, (N_TRAIN, D)); ytr = Xtr @ beta + rng.normal(0, NOISE_SD, N_TRAIN)
@@ -37,22 +37,30 @@ def one_seed(seed: int) -> tuple[float, float]:
     bB, *_ = np.linalg.lstsq(Xtr, ytr, rcond=None)
     bA = np.linalg.solve(Xtr.T @ Xtr + LAMBDA * np.eye(D), Xtr.T @ ytr)
 
-    def nll(b):
+    def nll(b, Xt, yt):
         rtr = ytr - Xtr @ b
-        s2 = max(float(rtr @ rtr) / N_TRAIN, 1e-6)          # plug-in residual variance (nats need a scale)
-        rte = yte - Xte @ b
-        return 0.5 * math.log(2 * math.pi * s2) + float(rte @ rte) / (2 * s2 * N_TEST)
-    return nll(bA), nll(bB)
+        s2 = max(float(rtr @ rtr) / N_TRAIN, 1e-6)          # plug-in train residual variance (nats need a scale)
+        rte = yt - Xt @ b
+        return 0.5 * math.log(2 * math.pi * s2) + float(rte @ rte) / (2 * s2 * len(yt))
+
+    if null:
+        # NEGATIVE CONTROL: arm A is the SAME OLS model as B, scored on an independent test draw.
+        # No real advantage -> per-seed delta is symmetric noise about 0 -> the gate must FAIL.
+        Xte2 = rng.normal(0, 1, (N_TEST, D)); yte2 = Xte2 @ beta + rng.normal(0, NOISE_SD, N_TEST)
+        return nll(bB, Xte2, yte2), nll(bB, Xte, yte)
+    return nll(bA, Xte, yte), nll(bB, Xte, yte)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="raw.json")
+    ap.add_argument("--null", action="store_true",
+                    help="negative control: both arms are the same OLS model (no real effect); the gate should FAIL")
     a = ap.parse_args()
 
     errA = np.empty(N_SEEDS); errB = np.empty(N_SEEDS)
     for i in range(N_SEEDS):
-        errA[i], errB[i] = one_seed(1000 + i)
+        errA[i], errB[i] = one_seed(1000 + i, null=a.null)
     delta = (errB - errA) / errB
     abs_nats = errB - errA
 
@@ -62,7 +70,8 @@ def main():
 
     out = {
         "config": {"lambda": LAMBDA, "n_train": N_TRAIN, "n_test": N_TEST, "d": D,
-                    "n_seeds": N_SEEDS, "n_nonzero": N_NONZERO, "noise_sd": NOISE_SD},
+                    "n_seeds": N_SEEDS, "n_nonzero": N_NONZERO, "noise_sd": NOISE_SD,
+                    "null_control": a.null},
         "units": {"err": "nats", "delta": "dimensionless_fraction", "abs_nats": "nats"},
         "per_seed": {"err_A": errA.round(6).tolist(), "err_B": errB.round(6).tolist(),
                       "delta": delta.round(6).tolist(), "abs_nats": abs_nats.round(6).tolist()},

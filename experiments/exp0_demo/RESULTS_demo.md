@@ -38,6 +38,18 @@ as a finding (OPERATING_GUIDE §3 currency, §4 red-flag).
 
 The withdrawal is also recorded in the program-level register: `CURRENT_STATE.md` §3.
 
+## Negative control: the gate discriminates (it is not an ever-PASS)
+A gate that only ever says PASS proves nothing. Run the built-in negative control, where both arms
+are the same OLS model scored on independent test draws (no real effect):
+```bash
+uv run pilot/run.py --null --out null.json
+uv run gate.py --raw null.json --out null_gate.json
+```
+This yields **FAIL**: sign test p = 0.23 (k = 109/200, at chance), mean Δ = 0.0024, 95% CI
+[-0.0019, 0.0070] (includes 0). Same evaluator, same thresholds, opposite verdict - so the PASS above
+is a real test result, not a rubber stamp. (Verified by `/council` 2026-06-18, which also obtained
+FAIL and MARGINAL from constructed inputs.)
+
 ## What this demo demonstrates about the method
 - Preregistered, unit-bearing thresholds + a once-only evaluator → a verdict you can trust.
 - A **dimensionless** primary metric is immune to the unit confound that killed the bonus claim.
