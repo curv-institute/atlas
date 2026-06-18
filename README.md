@@ -1,17 +1,20 @@
-# Open Research Skeleton
+# Atlas
 
-A reusable repository skeleton for **rigorous, agent-assisted research** — the kind where a
-result only becomes a claim after it survives an attempt to kill it. It encodes a working method
-into files an AI coding agent (e.g. Claude Code) and a human can both operate: a living operating
-guide, a canonical state surface, preregistration + verification gates, adversarial review, and a
-typed memory of lessons learned.
+A documented command surface for **rigorous, agent-assisted research *and* development** — a hub
+that maps and governs many concurrent repos/work areas, where a result (or a change) only counts
+after it survives an attempt to break it. It encodes a working method into files an AI coding agent
+(e.g. Claude Code) and a human can both operate: a living operating guide, a canonical state
+surface, ownership/coordination across workstreams, preregistration + verification gates,
+adversarial review, and a typed memory of lessons learned.
 
-It ships with a **runnable demo experiment** (`experiments/exp0_demo`, numpy-only, runs in seconds)
-that walks the whole lifecycle — preregister → run → gate → adversarial review catches a planted
-overclaim → additive walkback — so you can see the method work end to end before adopting it.
+The same loop serves a science program (preregister → run → gate → review → record) and a software
+program (spec → build → test/verify → review → record): pre-state the bar, verify adversarially,
+record additively. It ships with a **runnable demo** (`experiments/exp0_demo`, numpy-only, runs in
+seconds) that walks the whole lifecycle end to end — including a planted overclaim caught in review
+and walked back — so you can see it work before adopting it.
 
-> Distilled from the working practice of the **Curv Institute** research program and generalized
-> for reuse. See `OPERATING_GUIDE.md` for the method and `CONTRIBUTING.md` for the discipline.
+> Distilled from the working practice of the **Curv Institute** program and generalized for reuse.
+> See `OPERATING_GUIDE.md` for the method and `CONTRIBUTING.md` for the discipline.
 
 ## The idea in one sentence
 Rather be right than impressive: lead with the instrument, pre-state the threshold, verify

@@ -1,7 +1,7 @@
 # Operating Guide
 
-The method this skeleton encodes. It is **distilled from failure modes actually hit** in a real
-research program, generalized for reuse — so it is incomplete by construction and meant to grow
+The method Atlas encodes (for research *and* development). It is **distilled from failure modes
+actually hit** in a real program, generalized for reuse — so it is incomplete by construction and meant to grow
 (see §7). It gets the same discipline it preaches: additive, episode-anchored, checklist-shaped.
 
 ## 0. The one sentence
@@ -76,4 +76,4 @@ If any box is unchecked, it is a **candidate**, not a claim. Say so.
 - **Stays a checklist, not an essay.** Each addition must be actionable at the §6 gate.
 
 *Amendment log:* (append `YYYY-MM-DD — rule added/struck — episode`)
-- (template) — guide instantiated from the open-research-skeleton.
+- (template) — guide instantiated from Atlas.
