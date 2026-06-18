@@ -2,13 +2,13 @@
 # requires-python = ">=3.10"
 # dependencies = ["numpy"]
 # ///
-"""exp0_demo — runnable lifecycle demo (deterministic, numpy-only).
+"""exp0_demo - runnable lifecycle demo (deterministic, numpy-only).
 
 Task: predict a sparse linear target from d=40 features with only n_train=64 examples.
   B (baseline) = ordinary least squares.   A (method) = ridge (shrinkage), fixed lambda.
 Metric: held-out predictive negative log-likelihood (NLL) under a Gaussian, in NATS.
   err_* = mean test NLL (nats);  delta = (err_B - err_A)/err_B  (dimensionless fraction).
-We also record abs_nats = err_B - err_A (NATS) — the quantity the RESULTS walkback shows being
+We also record abs_nats = err_B - err_A (NATS) - the quantity the RESULTS walkback shows being
 unit-confused (nats reported as bits) to manufacture a second, false claim.
 
 Deterministic: fixed seeds; raw per-seed numbers are rounded before hashing so the content hash is

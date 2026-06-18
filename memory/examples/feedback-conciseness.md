@@ -1,6 +1,6 @@
 ---
 name: response-conciseness
-description: "Keep responses tight; never flood context with raw tool output — pipe big output to a file and summarize"
+description: "Keep responses tight; never flood context with raw tool output - pipe big output to a file and summarize"
 metadata:
   type: feedback
 ---
@@ -12,4 +12,4 @@ to a file (e.g. `/tmp/…`), then report only the lines that matter + counts.
 In long sessions context is precious.
 
 **How to apply:** redirect spew-prone commands to a file and `grep`/summarize; lead with the answer;
-a verdict + the few load-bearing numbers beats a wall of text. (Example memory — adapt or delete.)
+a verdict + the few load-bearing numbers beats a wall of text. (Example memory - adapt or delete.)

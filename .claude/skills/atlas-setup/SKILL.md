@@ -1,11 +1,11 @@
 ---
 name: atlas-setup
-description: Guided setup/reconfigure wizard for an Atlas-based project — walks the user through naming, canonical state, ownership, which CLI agents + agent files, the optional fleet layer, memory seeding, the first experiment, and git/remote/attribution, confirming before anything destructive or outward-facing. Use when the user says "/atlas-setup", "/onboard", "set up this project", "configure Atlas", or "change the project settings". Re-runnable (idempotent) to adjust settings later, not just first-time.
+description: Guided setup/reconfigure wizard for an Atlas-based project - walks the user through naming, canonical state, ownership, which CLI agents + agent files, the optional fleet layer, memory seeding, the first experiment, and git/remote/attribution, confirming before anything destructive or outward-facing. Use when the user says "/atlas-setup", "/onboard", "set up this project", "configure Atlas", or "change the project settings". Re-runnable (idempotent) to adjust settings later, not just first-time.
 ---
 
-# /atlas-setup  (alias: /onboard) — guided project setup & reconfigure
+# /atlas-setup  (alias: /onboard) - guided project setup & reconfigure
 
-Walk the user through making this Atlas template *their* project — or changing settings later. Ask
+Walk the user through making this Atlas template *their* project - or changing settings later. Ask
 **one focused question at a time** (or small grouped sets), apply each change, confirm before
 anything destructive (deleting files, renaming) or outward-facing (creating/pushing a remote), and
 finish with a summary + a single commit. Re-runnable: if a setting is already configured, show its
@@ -53,7 +53,7 @@ Then go section by section; skip any the user says is already fine.
 ## 8. Git, remote, license
 - Set repo-local `user.email` / `user.name`.
 - Confirm `LICENSE` + attribution; review `.gitignore`.
-- **Remote (outward-facing — confirm explicitly):** offer to create a GitHub repo (`gh repo create`)
+- **Remote (outward-facing - confirm explicitly):** offer to create a GitHub repo (`gh repo create`)
   and push; ask public vs private-first and the org/account. Do NOT push without an explicit yes.
 
 ## 9. Confirm & commit

@@ -1,4 +1,4 @@
-# Contributing — the record discipline
+# Contributing - the record discipline
 
 This repo treats its own history the way it treats results: **additive and honest.**
 
@@ -8,7 +8,7 @@ This repo treats its own history the way it treats results: **additive and hones
 - Attribute agent-assisted commits, e.g. a trailer:
   `Co-Authored-By: <your agent/model> <noreply@example.com>`
 - In shared clones, `pull --rebase` before editing; never blanket `git add -A` over another thread's
-  staged work — stage only the files you changed.
+  staged work - stage only the files you changed.
 
 ## The record
 - **Never delete history.** Wrong results get a *supersession banner* and stay on the page; the
@@ -16,7 +16,7 @@ This repo treats its own history the way it treats results: **additive and hones
 - **Evidence files are write-once.** Preregistration and timestamped/attested files stay byte-verbatim
   (editing breaks provenance and reads as tampering). Correct via a new file + a banner, not an edit.
 - **Reproducibility ≠ preregistration.** Clone-and-run reproducibility and blind, timestamped
-  preregistration are *distinct* guarantees — never conflate them.
+  preregistration are *distinct* guarantees - never conflate them.
 
 ## Verification hygiene
 - Run gated/verification commands from a clean shell with an explicit absolute cwd.

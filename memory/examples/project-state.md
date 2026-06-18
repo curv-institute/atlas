@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-(Example — replace with real state, or delete. Convert relative dates to absolute.)
+(Example - replace with real state, or delete. Convert relative dates to absolute.)
 
 Active goal: validate the demo effect under a higher-resolution / larger-N regime before promoting
 it from toy-scope to a general claim. Constraint: heavy runs need explicit confirmation first.

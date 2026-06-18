@@ -1,4 +1,4 @@
-# EXAMPLE inventory — all addresses/MACs are FAKE placeholders. Sanitize before committing real data.
+# EXAMPLE inventory - all addresses/MACs are FAKE placeholders. Sanitize before committing real data.
 # This optional layer models a small multi-machine research fleet so an agent knows where to run what.
 schema_version: 1
 generated_at: "YYYY-MM-DDThh:mm:ssZ"
@@ -33,7 +33,7 @@ nodes:
     lan_ip: "10.0.0.20"           # example
     export: "/data"
 
-# Ethernet MACs per node/interface. Keep this filled in — it is the authoritative way to find a host
+# Ethernet MACs per node/interface. Keep this filled in - it is the authoritative way to find a host
 # whose IP moved (match the MAC against `ip neigh`), and to identify a mystery host by OUI vendor.
 link_mac_addresses:
   description: "Per-interface MACs (FAKE examples). collected_at + source per real entry."

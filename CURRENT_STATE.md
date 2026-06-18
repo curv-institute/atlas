@@ -1,7 +1,7 @@
 # Current State
 
 The single canonical state surface. If a wiki/topic page disagrees with this file, **this file
-wins** — point stale pages here. Update it *as work lands*, not only at the end.
+wins** - point stale pages here. Update it *as work lands*, not only at the end.
 
 _As of: YYYY-MM-DD_
 
@@ -15,7 +15,7 @@ _As of: YYYY-MM-DD_
 |-----------|------------------------------------|-------|
 | _(example)_ … | adversarial review pending | … |
 
-## 3. Withdrawn-claims register (NEVER delete — supersede)
+## 3. Withdrawn-claims register (NEVER delete - supersede)
 Record anything retracted or reframed, with the reason. Past numbers stay visible so the record is
 honest and the lesson is reusable.
 

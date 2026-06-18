@@ -1,4 +1,4 @@
-# Preregistration — exp0_demo
+# Preregistration - exp0_demo
 
 **FREEZE THIS FILE BEFORE RUNNING.** Commit it; optionally OpenTimestamp it (see note) so the
 prereg is provably blind to the results.
@@ -11,11 +11,11 @@ Method **A** (a shrinkage estimator) achieves lower held-out prediction error th
 - Synthetic regression: `n_train=64`, `n_test=4000`, `d=40` features, true sparse coefficients,
   Gaussian noise. `n_seeds=200` independent seeds.
 - Per seed, fit A and B on train, measure test error on the **held-out** test split (disjoint from
-  train — no same-split leakage).
+  train - no same-split leakage).
 - Primary metric: **relative error reduction** `Δ = (err_B − err_A) / err_B`, reported as a fraction
   (dimensionless), per seed.
 
-## Pre-stated thresholds (with units) — set before any run
+## Pre-stated thresholds (with units) - set before any run
 - **PASS** iff *both*:
   1. paired sign test of `err_A < err_B` across seeds has **p < 0.01** (two-sided), AND
   2. the **95% bootstrap CI of mean Δ excludes 0** (Δ in dimensionless fraction units).
@@ -36,4 +36,4 @@ Method **A** (a shrinkage estimator) achieves lower held-out prediction error th
 After committing this file:
 `ots stamp PREREGISTRATION.md` (OpenTimestamps) → commit the `.ots`. That timestamps the prereg
 against the Bitcoin chain, evidencing it predates the run. Reproducibility (clone-and-run) and
-preregistration (blind, timestamped) are distinct guarantees — keep both, conflate neither.
+preregistration (blind, timestamped) are distinct guarantees - keep both, conflate neither.

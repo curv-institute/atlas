@@ -2,7 +2,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["numpy"]
 # ///
-"""exp0_demo evaluator — recomputes the PRE-STATED gate from raw.json and writes the verdict.
+"""exp0_demo evaluator - recomputes the PRE-STATED gate from raw.json and writes the verdict.
 
 Gate (frozen in PREREGISTRATION.md): PASS iff BOTH
   (1) paired sign test of err_A < err_B has two-sided p < 0.01, AND

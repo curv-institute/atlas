@@ -9,7 +9,7 @@ _/    _\_|  _____|_/    _\_____/
 
 # Atlas
 
-A documented command surface for **rigorous, agent-assisted research *and* development** — a hub
+A documented command surface for **rigorous, agent-assisted research *and* development** - a hub
 that maps and governs many concurrent repos/work areas, where a result (or a change) only counts
 after it survives an attempt to break it. It encodes a working method into files an AI coding agent
 (e.g. Claude Code) and a human can both operate: a living operating guide, a canonical state
@@ -19,15 +19,15 @@ adversarial review, and a typed memory of lessons learned.
 The same loop serves a science program (preregister → run → gate → review → record) and a software
 program (spec → build → test/verify → review → record): pre-state the bar, verify adversarially,
 record additively. It ships with a **runnable demo** (`experiments/exp0_demo`, numpy-only, runs in
-seconds) that walks the whole lifecycle end to end — including a planted overclaim caught in review
-and walked back — so you can see it work before adopting it.
+seconds) that walks the whole lifecycle end to end - including a planted overclaim caught in review
+and walked back - so you can see it work before adopting it.
 
 > Distilled from the working practice of the **Curv Institute** program and generalized for reuse.
 > See `OPERATING_GUIDE.md` for the method and `CONTRIBUTING.md` for the discipline.
 
 ## The idea in one sentence
 Rather be right than impressive: lead with the instrument, pre-state the threshold, verify
-adversarially, and record everything additively — withdrawals stay on the page.
+adversarially, and record everything additively - withdrawals stay on the page.
 
 ## How the workflows compose
 Each named workflow is a skill (`/mediate`, `/research`, `/optimize`, `/council`, `/snapshot`).
@@ -36,7 +36,7 @@ Each named workflow is a skill (`/mediate`, `/research`, `/optimize`, `/council`
 ```mermaid
 flowchart TD
     T["Task / goal"] --> MED{"/mediate: in bounds?"}
-    MED -- "out of bounds" --> OWN["Notify owner — what / why / diff / risk;<br/>they judge (never halt-and-wait)"]
+    MED -- "out of bounds" --> OWN["Notify owner - what / why / diff / risk;<br/>they judge (never halt-and-wait)"]
     MED -- "in bounds" --> SC["Scope + state the falsifier"]
     SC --> PI["Cheap pilot first"]
     PI --> PR["Preregister: freeze the bar + units,<br/>before the run"]
@@ -54,18 +54,18 @@ flowchart TD
 ```
 
 ## Built for long, bounded autonomous runs
-Atlas is designed for work you hand to an agent and walk away from — long, unsupervised sessions
+Atlas is designed for work you hand to an agent and walk away from - long, unsupervised sessions
 that must stay honest and *stop on their own*. It bounds autonomy with structure, not trust:
 
-- **Pre-stated bars + gates** — the agent can't move the goalposts; the verdict comes from an
+- **Pre-stated bars + gates** - the agent can't move the goalposts; the verdict comes from an
   evaluator against a frozen, unit-bearing threshold.
-- **Ownership mediation, not halting** — `/mediate` routes out-of-bounds work to its owner instead of
+- **Ownership mediation, not halting** - `/mediate` routes out-of-bounds work to its owner instead of
   stalling the whole run on a human, so progress continues on what the agent owns.
-- **Resumable** — `CURRENT_STATE.md` + a task ledger let a run pause, summarize, and be picked up
+- **Resumable** - `CURRENT_STATE.md` + a task ledger let a run pause, summarize, and be picked up
   later (or by a different agent).
-- **Additive, auditable record** — every result *and* withdrawal stays on the page, so a long
+- **Additive, auditable record** - every result *and* withdrawal stays on the page, so a long
   unsupervised run leaves a trail you can verify after the fact.
-- **Interruptions ≠ conclusions** — an API/tooling error is logged and resumed, never counted as a
+- **Interruptions ≠ conclusions** - an API/tooling error is logged and resumed, never counted as a
   result or a reason to quit; only a real positive or a fully-surveyed conclusion stops a loop.
 
 ```mermaid
@@ -87,7 +87,7 @@ it, so Claude Code, Gemini CLI, Cursor, Codex, Aider, etc. all get the same meth
 are plain-markdown procedures (`.claude/skills/<name>/SKILL.md`) any agent can read and follow;
 Claude Code additionally exposes them as slash commands. Nothing here is Claude-only.
 
-**New here?** Run **`/atlas-setup`** (alias `/onboard`) — a guided wizard that walks you through
+**New here?** Run **`/atlas-setup`** (alias `/onboard`) - a guided wizard that walks you through
 naming, ownership, which agents you use, the optional fleet layer, and your first experiment.
 
 ## What's here
@@ -97,7 +97,7 @@ naming, ownership, which agents you use, the optional fleet layer, and your firs
 | `OPERATING_GUIDE.md` | The method: result lifecycle, claim hygiene, confound catalog, pre-claim checklist, amendment protocol. **Living document.** |
 | `CURRENT_STATE.md` | The single canonical state surface: live claims, the **withdrawn-claims register**, adoptions/closures. |
 | `Home.md` | Index of every topic/wiki page. |
-| `OWNERSHIP.md` | Who/what owns which area — consulted by the `/mediate` skill. |
+| `OWNERSHIP.md` | Who/what owns which area - consulted by the `/mediate` skill. |
 | `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
 | `wiki/topics/` | Hand-edited topic pages (no build pipeline; the files *are* the wiki). |
 | `experiments/exp0_demo/` | A runnable toy that exercises the full lifecycle. |

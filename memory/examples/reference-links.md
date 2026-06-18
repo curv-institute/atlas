@@ -5,7 +5,7 @@ metadata:
   type: reference
 ---
 
-(Example — replace with real pointers, or delete.)
+(Example - replace with real pointers, or delete.)
 
 - Code/repos: <your remotes>
 - Datasets: <where they live / how to fetch>

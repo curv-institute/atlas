@@ -5,7 +5,7 @@ metadata:
   type: user
 ---
 
-(Example — replace with real details, or delete.)
+(Example - replace with real details, or delete.)
 
 The maintainer is a researcher who delegates substantial autonomy for long-running technical work
 but enforces rigorous verification: preregister before running, gate, then adversarially review
