@@ -12,7 +12,8 @@ after it survives an attempt to break it.
 1. `OPERATING_GUIDE.md` - the method: lifecycle, claim hygiene, confound catalog, pre-claim checklist.
 2. `CURRENT_STATE.md` - the single canonical state surface (live claims, withdrawn register, open work). **If anything disagrees with this file, it wins.**
 3. `OWNERSHIP.md` - who/what owns which area (consulted before you touch anything - see Workflows § `mediate`).
-4. `Home.md` - index of topics/experiments.
+4. `REPOS.md` - the repos this hub governs (register one with `/add-repo <path>`).
+5. `Home.md` - index of topics/experiments.
 
 ## The loop (research *or* development)
 Scope → cheap pilot → **preregister** (freeze the bar, with units, before the run) → build/run →
@@ -28,6 +29,7 @@ agents: when the user asks for one (or the situation matches), open the file and
 | Workflow | Procedure file | Use when |
 |----------|----------------|----------|
 | **atlas-setup** (alias **onboard**) | `.claude/skills/atlas-setup/SKILL.md` | first-time setup, or change project settings (name, ownership, agents, fleet, remote) |
+| **add-repo** | `.claude/skills/add-repo/SKILL.md` | register a git checkout into this hub's `REPOS.md` |
 | **research** | `.claude/skills/research/SKILL.md` | work a task end-to-end through the lifecycle |
 | **council**  | `.claude/skills/council/SKILL.md`  | adversarially verify a result / vet a plan / go-no-go |
 | **optimize** | `.claude/skills/optimize/SKILL.md` | make a slow/expensive run faster *without changing results* |

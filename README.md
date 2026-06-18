@@ -99,7 +99,8 @@ naming, ownership, which agents you use, the optional fleet layer, and your firs
 | `CURRENT_STATE.md` | The single canonical state surface: live claims, the **withdrawn-claims register**, adoptions/closures. |
 | `Home.md` | Index of every topic/wiki page. |
 | `OWNERSHIP.md` | Who/what owns which area - consulted by the `/mediate` skill. |
-| `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
+| `REPOS.md` | The repos this hub governs; register a checkout with `/add-repo <path>`. |
+| `.claude/skills/` | Agent workflows: `/atlas-setup` (`/onboard`), `/add-repo`, `/research`, `/council`, `/optimize`, `/snapshot`, `/mediate`. |
 | `wiki/topics/` | Hand-edited topic pages (no build pipeline; the files *are* the wiki). |
 | `experiments/exp0_demo/` | A runnable toy that exercises the full lifecycle. |
 | `memory/` | Typed, persistent lessons (`user` / `feedback` / `project` / `reference`) + index. |

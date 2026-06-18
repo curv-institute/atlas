@@ -16,9 +16,9 @@ Then find what changed **after** the canonical state's date (recent commits / ne
 are the freshest results that may not be folded in yet. Flag them as not-yet-canonical.
 
 ## Step 2 - Fan out (parallel reads)
-Launch read-only agents concurrently, each with a tight scope (experiments, topic pages, any
-sibling repos), each returning a **plain-English** summary: what was tested, the result, and whether
-it's a positive, a negative, an obstruction, or still open. Scale the fleet to the ask.
+Launch read-only agents concurrently, each with a tight scope (experiments, topic pages, and each
+repo listed in `REPOS.md`), each returning a **plain-English** summary: what was tested, the result,
+and whether it's a positive, a negative, an obstruction, or still open. Scale the fleet to the ask.
 
 ## Step 3 - Synthesize
 Write the briefing:
