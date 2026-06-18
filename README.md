@@ -20,9 +20,17 @@ and walked back — so you can see it work before adopting it.
 Rather be right than impressive: lead with the instrument, pre-state the threshold, verify
 adversarially, and record everything additively — withdrawals stay on the page.
 
+## Works with any CLI agent
+The agent rules live in a root **`AGENTS.md`** (the cross-agent standard, honored by Codex,
+opencode, Cursor, and others). `CLAUDE.md`, `GEMINI.md`, and `.cursor/rules/` are thin redirects to
+it, so Claude Code, Gemini CLI, Cursor, Codex, Aider, etc. all get the same method. The five
+workflows are plain-markdown procedures (`.claude/skills/<name>/SKILL.md`) any agent can read and
+follow; Claude Code additionally exposes them as slash commands. Nothing here is Claude-only.
+
 ## What's here
 | Path | What it is |
 |------|------------|
+| `AGENTS.md` | **Canonical agent entry point** (any CLI agent). The rest redirect here. |
 | `OPERATING_GUIDE.md` | The method: result lifecycle, claim hygiene, confound catalog, pre-claim checklist, amendment protocol. **Living document.** |
 | `CURRENT_STATE.md` | The single canonical state surface: live claims, the **withdrawn-claims register**, adoptions/closures. |
 | `Home.md` | Index of every topic/wiki page. |

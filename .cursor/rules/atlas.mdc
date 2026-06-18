@@ -1,0 +1,8 @@
+---
+description: Atlas — canonical agent rules for this repo
+alwaysApply: true
+---
+
+Follow **AGENTS.md** at the repo root — the canonical, agent-agnostic instruction file (method,
+ownership gate, verification hygiene, additive record, workflows). The workflow procedures live in
+`.claude/skills/<name>/SKILL.md` as plain markdown to read and follow when asked.
